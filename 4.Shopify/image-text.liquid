@@ -1,0 +1,59 @@
+{% schema %}
+{
+  "name": "Image and Text Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "label": "Image",
+      "id": "image",
+      "default": "shopify_image_default.jpg"
+    },
+    {
+      "type": "text",
+      "label": "Title",
+      "id": "title",
+      "default": "HANDCRAFTED AND RESPONSIBLY SOURCED"
+    },
+    {
+      "type": "textarea",
+      "label": "Description Text",
+      "id": "description_text",
+      "default": "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain."
+    },
+    {
+      "type": "textarea",
+      "label": "Hidden Text",
+      "id": "hidden_text",
+      "default": "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain."
+    },
+    {
+      "type": "text",
+      "label": "Button Text",
+      "id": "button_text",
+      "default": "Learn more"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="image-text" id="reveal-section">
+  <div class="image-text__image">
+    <img src="{{ settings.image | img_url: 'original' }}" alt="Image" height="576px" width="720px"/>
+  </div>
+  <div class="image-text__description">
+    <div class="image-text__content">
+      <p class="image-text__title">
+        {{ settings.title }}
+      </p>
+      <p class="image-text__text">
+        {{ settings.description_text }}
+      </p>
+      <p class="image-text__text--hidden">
+        {{ settings.hidden_text }}
+      </p>
+      <button class="image-text__button">
+        {{ settings.button_text }}
+      </button>
+    </div>
+  </div>
+</section>

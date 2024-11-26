@@ -1,0 +1,129 @@
+.image-text {
+    font-family: "Fira Sans";
+    font-weight: lighter;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    max-width: 1440px;
+    height: 576px;
+    margin-top: 200vh;
+    margin-bottom: 200vh;
+}
+
+#reveal-section {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+#reveal-section.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.image-text__image {
+    width: 50%;
+    max-height: 100%;
+}
+
+.image-text__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.image-text__description {
+    width: 50%;
+    max-height: 100%;
+    padding: 7rem;
+    background-color: #E3CECE;
+    box-sizing: border-box;
+}
+
+.image-text__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.image-text__title {
+    font-size: 32px;
+    margin-bottom: 1rem;
+}
+
+.image-text__text {
+    font-size: 18px;
+    margin-bottom: 2rem;
+    height: "auto";
+    opacity: 1;
+    visibility: visible;
+    transition: max-height 0.5s ease-in, opacity 0.5s ease-in, visibility 0.5s ease-in;
+}
+
+.image-text__text--hidden {
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: visibility 3s ease;
+}
+
+.image-text__button {
+    font-size: 14px;
+    background-color: #E3CECE;
+    border: 2px solid black;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    margin-bottom: 3rem;
+    font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+    .image-text__image img {
+        object-fit: fill;
+    }
+
+    .image-text__description {
+        padding: 2rem;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-text {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .image-text__image {
+        width: 100%;
+        height: auto;
+    }
+
+    .image-text__image img {
+        height: auto;
+        object-fit: cover;
+    }
+
+    .image-text__description {
+        width: 100%;
+        padding: 0.7rem;
+        box-sizing: border-box;
+    }
+
+    .image-text__content {
+        box-sizing: border-box;
+    }
+
+    .image-text__title {
+        font-size: 24px;
+        margin-bottom: 1rem;
+    }
+
+    .image-text__text {
+        font-size: 16px;
+        margin-bottom: 2rem;
+    }
+}
